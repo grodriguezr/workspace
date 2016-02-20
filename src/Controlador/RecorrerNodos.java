@@ -14,4 +14,10 @@ public class RecorrerNodos {
         
     }
     
+    enum tipos{
+        noRecorrido,
+        recorriendo,
+        recorrido
+    }
+    
 }

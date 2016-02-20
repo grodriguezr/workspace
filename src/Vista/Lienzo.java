@@ -82,6 +82,7 @@ public class Lienzo extends javax.swing.JPanel {
                     if ((graphComponent.getCellAt(e.getX(), e.getY()) instanceof mxCell)) {
                         cel1 = (mxCell) graphComponent.getCellAt(e.getX(), e.getY());
                         graph.getModel().remove(cel1);
+                        ControlNodos.getCreaNodos().borrarNodo(cel1);
                         setBorrable(false);
                     }
 

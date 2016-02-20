@@ -30,6 +30,7 @@
                   <Component id="bt2" max="32767" attributes="0"/>
                   <Component id="bt3" alignment="1" pref="85" max="32767" attributes="0"/>
                   <Component id="bt4" alignment="0" pref="85" max="32767" attributes="0"/>
+                  <Component id="bt5" alignment="0" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jSeparator1" min="-2" pref="13" max="-2" attributes="0"/>
@@ -47,10 +48,12 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="bt2" min="-2" pref="53" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="bt5" min="-2" pref="53" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="bt3" min="-2" pref="53" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="bt4" min="-2" pref="53" max="-2" attributes="0"/>
-              <EmptySpace pref="248" max="32767" attributes="0"/>
+              <EmptySpace pref="177" max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
@@ -94,7 +97,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="bt2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Uni&#xf3;n"/>
+        <Property name="text" type="java.lang.String" value="Uni&#xf3;n Izq"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bt2ActionPerformed"/>
@@ -114,6 +117,14 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bt4ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="bt5">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Uni&#xf3;n Der"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bt5ActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
