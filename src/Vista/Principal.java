@@ -18,7 +18,7 @@ public class Principal extends javax.swing.JFrame {
      * Creates new form Principal
      */
     //Lienzo l;
-    boolean izq = false, der = false;
+    
 
     public Principal() {
         initComponents();

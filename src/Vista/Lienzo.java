@@ -26,6 +26,7 @@ public class Lienzo extends javax.swing.JPanel {
     private boolean creable = false;//esta variable controla la creación de nodos, su estado cambia al presionar el botón "nodo"
     private boolean relacionable = false;//controla si un nodo puede o no puede relacionarse con otro
     private boolean borrable = false;
+    private boolean izq = false, der = false;
     private mxCell cel1;//estas dos variables nos ayudarán a generar la relación 
     private mxCell cel2;//entre dos nodos
     private static Lienzo lienzo = null;//instancia de lienzo
@@ -122,6 +123,23 @@ public class Lienzo extends javax.swing.JPanel {
     public void setBorrable(boolean borrable) {
         this.borrable = borrable;
     }
+
+    public boolean isIzq() {
+        return izq;
+    }
+
+    public void setIzq(boolean izq) {
+        this.izq = izq;
+    }
+
+    public boolean isDer() {
+        return der;
+    }
+
+    public void setDer(boolean der) {
+        this.der = der;
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
