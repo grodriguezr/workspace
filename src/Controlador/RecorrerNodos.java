@@ -10,5 +10,8 @@ package Controlador;
  * @author Gustavo
  */
 public class RecorrerNodos {
+    public void Preorden(){
+        
+    }
     
 }

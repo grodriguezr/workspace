@@ -54,7 +54,7 @@ public class Lienzo extends javax.swing.JPanel {
             @Override
             public void mousePressed(MouseEvent e) {//para saber si hicimos click con el mouse sobre el lienzo
                 if (isCreable()) {
-                    creaNodo(e.getX(), e.getY());//mandamos como parámetro las coordenadas en X y Y del sistio en que hicimos click con el mouse
+                    creaNodo(e.getX(), e.getY());//mandamos como parámetro las coordenadas en X y Y del sitio en que hicimos click con el mouse
                     setCreable(false);//lo hacemos falso para evitar que se sigan creando nodos a medida que hacemos click con el mouse
                 } else if (isRelacionable()) {
                     if ((graphComponent.getCellAt(e.getX(), e.getY()) instanceof mxCell)) {

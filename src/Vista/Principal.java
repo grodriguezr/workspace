@@ -6,6 +6,7 @@
 package Vista;
 
 import java.awt.Panel;
+import Controlador.ControlNodos;
 
 /**
  *
@@ -134,12 +135,11 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_bt2ActionPerformed
 
     private void bt3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt3ActionPerformed
-        // TODO add your handling code here:
         Lienzo.getLienzo().setBorrable(true);
     }//GEN-LAST:event_bt3ActionPerformed
 
     private void bt4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt4ActionPerformed
-        // TODO add your handling code here:
+        ControlNodos.getCreaNodos().imprimir();
     }//GEN-LAST:event_bt4ActionPerformed
 
     /**
