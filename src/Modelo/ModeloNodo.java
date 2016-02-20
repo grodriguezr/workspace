@@ -17,13 +17,15 @@ public class ModeloNodo {
     private String nodoPadre;
     private String nodoHijoIzquierdo;
     private String nodoHijoDerecho;
+    private boolean visitado;
 
-    public ModeloNodo(mxCell cell, String nombre, String nodoPadre, String nodoHijoIzquierdo, String nodoHijoDerecho) {
+    public ModeloNodo(mxCell cell, String nombre, String nodoPadre, String nodoHijoIzquierdo, String nodoHijoDerecho, boolean visitado) {
         this.nodo = cell;
         this.nombre = nombre;
         this.nodoPadre = nodoPadre;
         this.nodoHijoIzquierdo = nodoHijoIzquierdo;
         this.nodoHijoDerecho = nodoHijoDerecho;
+        this.visitado = visitado;
     }
 
     public ModeloNodo() {
@@ -32,6 +34,7 @@ public class ModeloNodo {
         this.nodoPadre = null;
         this.nodoHijoIzquierdo = null;
         this.nodoHijoDerecho = null;
+        this.visitado = false;
     }
 
     public String getNombre() {
@@ -72,6 +75,14 @@ public class ModeloNodo {
 
     public void setNodo(mxCell nodo) {
         this.nodo = nodo;
+    }
+
+    public boolean isVisitado() {
+        return visitado;
+    }
+
+    public void setVisitado(boolean visitado) {
+        this.visitado = visitado;
     }
     
 }
