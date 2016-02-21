@@ -43,6 +43,7 @@ public class Principal extends javax.swing.JFrame {
         bt3 = new javax.swing.JButton();
         bt4 = new javax.swing.JButton();
         bt5 = new javax.swing.JButton();
+        bt6 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -94,6 +95,13 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        bt6.setText("Preorden");
+        bt6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt6ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -105,7 +113,8 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(bt2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(bt3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
                     .addComponent(bt4, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
-                    .addComponent(bt5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(bt5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(bt6, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -125,7 +134,9 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(bt3, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(bt4, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(177, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(bt6, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(106, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -163,6 +174,11 @@ public class Principal extends javax.swing.JFrame {
         Lienzo.getLienzo().setIzq(false);
 
     }//GEN-LAST:event_bt5ActionPerformed
+
+    private void bt6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt6ActionPerformed
+        
+        ControlNodos.getCreaNodos().comienzaPreorden();
+    }//GEN-LAST:event_bt6ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -205,6 +221,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton bt3;
     private javax.swing.JButton bt4;
     private javax.swing.JButton bt5;
+    private javax.swing.JButton bt6;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JPanel miPanel;
     // End of variables declaration//GEN-END:variables

@@ -11,6 +11,7 @@ import com.mxgraph.model.mxICell;
 import java.util.ArrayList;
 import Vista.GraphDF;
 
+
 /**
  *
  * @author Gustavo
@@ -19,6 +20,7 @@ public class ControlNodos {
 
     ArrayList<ModeloNodo> listaNodos = new ArrayList<>();
     private static ControlNodos cn = null;
+    private RecorrerNodos rn = null;
 
     public static ControlNodos getCreaNodos() {
         if (cn == null) {
@@ -83,12 +85,25 @@ public class ControlNodos {
         boolean completo = false;
         for (byte i = 0; i < listaNodos.size(); i++) {
             if (listaNodos.get(i).getNodo().getId().equals(nodo.getId())) {
-                if((listaNodos.get(i).getNodoHijoDerecho() != null)&&(listaNodos.get(i).getNodoHijoIzquierdo()!= null)){
+                if ((listaNodos.get(i).getNodoHijoDerecho() != null) && (listaNodos.get(i).getNodoHijoIzquierdo() != null)) {
                     completo = true;
                 }
             }
         }
         return completo;
+    }
+
+    public void comienzaPreorden() {
+        for (byte i = 0; i < listaNodos.size(); i++) {
+            if ((listaNodos.get(i).getNodoPadre() == null)
+                    && ((listaNodos.get(i).getNodoHijoDerecho() != null)
+                    || listaNodos.get(i).getNodoHijoIzquierdo() != null)) {
+                rn = new RecorrerNodos();
+                rn.Preorden(listaNodos, listaNodos.get(i));
+            }else if(listaNodos.size()==1){
+                System.out.println(listaNodos.get(i).getNodo().getId());
+            }
+        }
     }
 
 }

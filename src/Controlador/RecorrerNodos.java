@@ -5,13 +5,17 @@
  */
 package Controlador;
 
+import com.mxgraph.model.mxCell;
+import Modelo.ModeloNodo;
+import java.util.ArrayList;
+
 /**
  *
  * @author Gustavo
  */
 public class RecorrerNodos {
-    public void Preorden(){
-        
+    public void Preorden(ArrayList<ModeloNodo> listaNodos, ModeloNodo nodo ){
+        System.out.println(nodo.getNodo().getId());
     }
     
     enum tipos{

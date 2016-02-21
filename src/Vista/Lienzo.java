@@ -73,7 +73,6 @@ public class Lienzo extends javax.swing.JPanel {
                                 cel2 = null;
                             } 
                             else {
-                                System.out.println(cel1.getChildCount());
                                 if (isIzq())
                                     lado = "Izq";
                                 else if(isDer())

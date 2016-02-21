@@ -31,6 +31,7 @@
                   <Component id="bt3" alignment="1" pref="85" max="32767" attributes="0"/>
                   <Component id="bt4" alignment="0" pref="85" max="32767" attributes="0"/>
                   <Component id="bt5" alignment="0" max="32767" attributes="0"/>
+                  <Component id="bt6" alignment="0" pref="85" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jSeparator1" min="-2" pref="13" max="-2" attributes="0"/>
@@ -53,7 +54,9 @@
               <Component id="bt3" min="-2" pref="53" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="bt4" min="-2" pref="53" max="-2" attributes="0"/>
-              <EmptySpace pref="177" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="bt6" min="-2" pref="53" max="-2" attributes="0"/>
+              <EmptySpace pref="106" max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
@@ -125,6 +128,14 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bt5ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="bt6">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Preorden"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bt6ActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
