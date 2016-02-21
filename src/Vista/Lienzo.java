@@ -66,12 +66,13 @@ public class Lienzo extends javax.swing.JPanel {
                         } else if (graphComponent.getCellAt(e.getX(), e.getY()) instanceof mxCell && cel2 == null) {
                             cel2 = (mxCell) graphComponent.getCellAt(e.getX(), e.getY());
 
-                            if (cel1.getChildCount() == 1) {
+                            if (ControlNodos.getCreaNodos().validaHijos(cel1)) {
                                 JOptionPane.showMessageDialog(null, "El nodo ya tiene dos nodos hijos");
                                 setRelacionable(false);
                                 cel1 = null;
                                 cel2 = null;
-                            } else {
+                            } 
+                            else {
                                 System.out.println(cel1.getChildCount());
                                 if (isIzq())
                                     lado = "Izq";
