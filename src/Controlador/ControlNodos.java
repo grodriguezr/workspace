@@ -99,10 +99,11 @@ public class ControlNodos {
                     && ((listaNodos.get(i).getNodoHijoDerecho() != null)
                     || listaNodos.get(i).getNodoHijoIzquierdo() != null)) {
                 rn = new RecorrerNodos();
-                rn.Preorden(listaNodos, listaNodos.get(i));
-            }else if(listaNodos.size()==1){
-                System.out.println(listaNodos.get(i).getNodo().getId());
+                rn.preorden(listaNodos, listaNodos.get(i));
             }
+//            else if(listaNodos.size()==1){
+//                System.out.println(listaNodos.get(i).getNodo().getId());
+//            }
         }
     }
 
