@@ -142,8 +142,9 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_bt1ActionPerformed
 
     private void bt2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt2ActionPerformed
-        Lienzo.getLienzo().setRelacionable(true);
-        
+        Lienzo.getLienzo().setRelacionable(true);//union con nodo izquierdo
+        Lienzo.getLienzo().setIzq(true);
+        Lienzo.getLienzo().setDer(false);
     }//GEN-LAST:event_bt2ActionPerformed
 
     private void bt3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt3ActionPerformed
@@ -157,7 +158,9 @@ public class Principal extends javax.swing.JFrame {
 
     private void bt5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt5ActionPerformed
         // TODO add your handling code here:
-        Lienzo.getLienzo().setRelacionable(true);
+        Lienzo.getLienzo().setRelacionable(true);//union con nodo derecho
+        Lienzo.getLienzo().setDer(true);
+        Lienzo.getLienzo().setIzq(false);
 
     }//GEN-LAST:event_bt5ActionPerformed
 

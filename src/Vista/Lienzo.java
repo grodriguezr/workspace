@@ -27,6 +27,7 @@ public class Lienzo extends javax.swing.JPanel {
     private boolean relacionable = false;//controla si un nodo puede o no puede relacionarse con otro
     private boolean borrable = false;
     private boolean izq = false, der = false;
+    private String tipo = "";
     private mxCell cel1;//estas dos variables nos ayudarán a generar la relación 
     private mxCell cel2;//entre dos nodos
     private static Lienzo lienzo = null;//instancia de lienzo
@@ -72,7 +73,11 @@ public class Lienzo extends javax.swing.JPanel {
                                 cel2 = null;
                             } else {
                                 System.out.println(cel1.getChildCount());
-                                ControlNodos.getCreaNodos().relacionarNodos("", graph, cel1, cel2, cel1.getValue().toString());
+                                if (isIzq())
+                                    tipo = "Izq";
+                                else if(isDer())
+                                    tipo = "Der";
+                                ControlNodos.getCreaNodos().relacionarNodos(tipo, graph, cel1, cel2, cel1.getValue().toString());
                                 setRelacionable(false);
                                 cel1 = null;
                                 cel2 = null;
