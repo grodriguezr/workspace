@@ -28,12 +28,27 @@ public class ControlNodos {
         listaNodos.add(new ModeloNodo(cell, "Nodo", null, null, null, null));//crea una nueva instancia de nodo y la agrega a la lista
         cell.setConnectable(false);
     }
-    public void relacionarNodos(String nombre, GraphDF graph, mxCell cel1, mxCell cel2, String tipo) {
-        graph.insertEdge(graph.getDefaultParent(), null, nombre, cel1, cel2);//crea la linea de relacion entre dos nodos
+    public void relacionarNodos(String lado, GraphDF graph, mxCell cel1, mxCell cel2, String tipo) {
+        graph.insertEdge(graph.getDefaultParent(), null, lado, cel1, cel2);//crea la linea de relacion entre dos nodos de forma grafica
+        for (byte i = 0; i<listaNodos.size(); i++){
+            if(listaNodos.get(i).getNodo().getId().equals(cel1.getId())){
+                switch (lado) {
+                    case "Izq":
+                        listaNodos.get(i).setNodoHijoIzquierdo(cel2.getId());
+                        break;
+                    case "Der":
+                        listaNodos.get(i).setNodoHijoDerecho(cel2.getId());
+                        break;
+                }
+             }
+        }
     }
     public void imprimir(){
         for (byte i = 0; i < listaNodos.size(); i++) {
-            System.out.println(listaNodos.get(i).getNodo().getValue().toString() +"ID: "+ listaNodos.get(i).getNodo().getId());
+            System.out.println(listaNodos.get(i).getNodo().getValue().toString() 
+                    +"ID: "+ listaNodos.get(i).getNodo().getId()+" IDHijoIzquierdo: "
+                    +listaNodos.get(i).getNodoHijoIzquierdo()+" IDHijoDerecho: "
+                    +listaNodos.get(i).getNodoHijoDerecho());
             
         }
     }
