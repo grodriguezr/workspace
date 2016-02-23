@@ -32,7 +32,7 @@ public class ControlNodos {
 
     public void crearNodo(GraphDF graph, int x, int y) {
         mxCell cell = (mxCell) graph.insertVertex(graph.getDefaultParent(), null, "Nodo", (x - 25), (y - 25), 50, 50, "shape=ellipse;perimter=ellipsePerimeter;fillColor=#C9CCC7;gradientColor=#7E7F7C");//crea un nodo de forma grafica
-        listaNodos.add(new ModeloNodo(cell, "Nodo", null, null, null, null));//crea una nueva instancia de nodo y la agrega a la lista
+        listaNodos.add(new ModeloNodo(cell, "Nodo", null, null, null, "no visitado"));//crea una nueva instancia de nodo y la agrega a la lista
         cell.setConnectable(false);
     }
 
