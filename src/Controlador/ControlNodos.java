@@ -14,7 +14,7 @@ public class ControlNodos {
 
     ArrayList<ModeloNodo> listaNodos = new ArrayList<>();
     private static ControlNodos cn = null;
-    private RecorrerNodos rn = null;
+    private RecorreNodos rn = null;
 
     public static ControlNodos getCreaNodos() {
         if (cn == null) {
@@ -93,7 +93,7 @@ public class ControlNodos {
             if ((listaNodos.get(i).getNodoPadre() == null)
                     && ((listaNodos.get(i).getNodoHijoDerecho() != null)
                     || listaNodos.get(i).getNodoHijoIzquierdo() != null)) {
-                rn = new RecorrerNodos();
+                rn = new RecorreNodos();
                 rn.preorden(listaNodos, listaNodos.get(i));
             }
         }
