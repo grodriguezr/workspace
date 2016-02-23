@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Controlador;
 
 import Modelo.ModeloNodo;
@@ -10,7 +5,6 @@ import com.mxgraph.model.mxCell;
 import com.mxgraph.model.mxICell;
 import java.util.ArrayList;
 import Vista.GraphDF;
-
 
 /**
  *
@@ -32,7 +26,7 @@ public class ControlNodos {
 
     public void crearNodo(GraphDF graph, int x, int y) {
         mxCell cell = (mxCell) graph.insertVertex(graph.getDefaultParent(), null, "Nodo", (x - 25), (y - 25), 50, 50, "shape=ellipse;perimter=ellipsePerimeter;fillColor=#C9CCC7;gradientColor=#7E7F7C");//crea un nodo de forma grafica
-        listaNodos.add(new ModeloNodo(cell, "Nodo", null, null, null, "no visitado"));//crea una nueva instancia de nodo y la agrega a la lista
+        listaNodos.add(new ModeloNodo(cell, "Nodo", null, null, null, "no recorrido"));//crea una nueva instancia de nodo y la agrega a la lista
         cell.setConnectable(false);
     }
 
@@ -68,7 +62,7 @@ public class ControlNodos {
                     + "ID: " + listaNodos.get(i).getNodo().getId() + " IDHijoIzquierdo: "
                     + listaNodos.get(i).getNodoHijoIzquierdo() + " IDHijoDerecho: "
                     + listaNodos.get(i).getNodoHijoDerecho() + " NodoPadre: "
-                    + listaNodos.get(i).getNodoPadre());
+                    + listaNodos.get(i).getNodoPadre() + " Estado: " + listaNodos.get(i).getEstado());
 
         }
     }
@@ -85,7 +79,8 @@ public class ControlNodos {
         boolean completo = false;
         for (byte i = 0; i < listaNodos.size(); i++) {
             if (listaNodos.get(i).getNodo().getId().equals(nodo.getId())) {
-                if ((listaNodos.get(i).getNodoHijoDerecho() != null) && (listaNodos.get(i).getNodoHijoIzquierdo() != null)) {
+                if ((listaNodos.get(i).getNodoHijoDerecho() != null)
+                        && (listaNodos.get(i).getNodoHijoIzquierdo() != null)) {
                     completo = true;
                 }
             }
@@ -101,9 +96,6 @@ public class ControlNodos {
                 rn = new RecorrerNodos();
                 rn.preorden(listaNodos, listaNodos.get(i));
             }
-//            else if(listaNodos.size()==1){
-//                System.out.println(listaNodos.get(i).getNodo().getId());
-//            }
         }
     }
 
