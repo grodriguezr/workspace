@@ -35,21 +35,48 @@ public class RecorreNodos {
                         System.out.println(nodo.getNodo().getId());
                         nodo.setEstado("recorriendo");
                         preorden(listaNodos, buscaNodo(listaNodos, nodo.getNodoHijoIzquierdo()));
-                    }else if (nodo.getNodoHijoDerecho()!= null) {
+                    } else if (nodo.getNodoHijoDerecho() != null) {
                         System.out.println(nodo.getNodo().getId());
                         nodo.setEstado("recorriendo");
                         preorden(listaNodos, buscaNodo(listaNodos, nodo.getNodoHijoDerecho()));
-                    }else if(nodo.getNodoHijoIzquierdo() == null && nodo.getNodoHijoDerecho()!= null){
+                    } else if (nodo.getNodoHijoIzquierdo() == null && nodo.getNodoHijoDerecho() == null) {
                         System.out.println(nodo.getNodo().getId());
                         nodo.setEstado("recorrido");
+                        preorden(listaNodos, buscaNodo(listaNodos, nodo.getNodoPadre()));
+
                     }
                     break;
                 case "recorriendo":
-                    if("recorrido".equals(buscaNodo(listaNodos, nodo.getNodoHijoIzquierdo()).getEstado())){
-                        
+                    if (nodo.getNodoHijoIzquierdo() != null
+                            && "recorrido".equals(buscaNodo(listaNodos,
+                                            nodo.getNodoHijoIzquierdo()).getEstado())) {
+                        nodo.setEstado("recorriendo");
+                        System.out.println("izquierdo");
+                        preorden(listaNodos, buscaNodo(listaNodos, nodo.getNodoHijoDerecho()));
+                    } else if (nodo.getNodoHijoDerecho() != null
+                            && "recorrido".equals(buscaNodo(listaNodos,
+                                            nodo.getNodoHijoDerecho()).getEstado())) {
+                        nodo.setEstado("recorriendo");
+                        System.out.println("derecho");
+                        preorden(listaNodos, buscaNodo(listaNodos, nodo.getNodoHijoIzquierdo()));
+                    } else if (nodo.getNodoHijoIzquierdo() == null && nodo.getNodoHijoDerecho() == null) {
+                        nodo.setEstado("recorrido");
+                        System.out.println("nulo");
+                        preorden(listaNodos, buscaNodo(listaNodos, nodo.getNodoPadre()));
+
+                    } else if ("recorrido".equals(buscaNodo(listaNodos,
+                            nodo.getNodoHijoIzquierdo()).getEstado())
+                            && "recorrido".equals(buscaNodo(listaNodos,
+                                            nodo.getNodoHijoDerecho()).getEstado())) {
+                        nodo.setEstado("recorrido");
+                        System.out.println("recorrido");
+                        preorden(listaNodos, buscaNodo(listaNodos, nodo.getNodoPadre()));
+
                     }
                     break;
                 case "recorrido":
+                    //preorden(listaNodos, buscaNodo(listaNodos, nodo.getNodoPadre()));
+                    System.out.println("recorrido");
                     break;
 
             }
