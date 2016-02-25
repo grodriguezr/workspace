@@ -53,19 +53,19 @@ public class ModeloNodo {
         this.nodoPadre = nodoPadre;
     }
 
-    public String getNodoHijoIzquierdo() {
+    public String getNodoHijoIzq() {
         return nodoHijoIzquierdo;
     }
 
-    public void setNodoHijoIzquierdo(String nodoHijoIzquierdo) {
+    public void setNodoHijoIzq(String nodoHijoIzquierdo) {
         this.nodoHijoIzquierdo = nodoHijoIzquierdo;
     }
 
-    public String getNodoHijoDerecho() {
+    public String getNodoHijoDer() {
         return nodoHijoDerecho;
     }
 
-    public void setNodoHijoDerecho(String nodoHijoDerecho) {
+    public void setNodoHijoDer(String nodoHijoDerecho) {
         this.nodoHijoDerecho = nodoHijoDerecho;
     }
 

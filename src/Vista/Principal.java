@@ -7,6 +7,7 @@ package Vista;
 
 import java.awt.Panel;
 import Controlador.ControlNodos;
+import java.awt.Color;
 
 /**
  *
@@ -24,7 +25,7 @@ public class Principal extends javax.swing.JFrame {
         initComponents();
         Lienzo.getLienzo().setSize(miPanel.getSize());
         miPanel.add(Lienzo.getLienzo());
-        
+        setLocation(300, 100);
     }
 
     /**
@@ -176,7 +177,6 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_bt5ActionPerformed
 
     private void bt6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt6ActionPerformed
-        
         ControlNodos.getCreaNodos().comienzaPreorden();
     }//GEN-LAST:event_bt6ActionPerformed
 

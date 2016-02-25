@@ -36,7 +36,7 @@ public class ControlNodos {
             if (listaNodos.get(i).getNodo().getId().equals(cel1.getId())) {
                 switch (lado) {
                     case "Izq":
-                        listaNodos.get(i).setNodoHijoIzquierdo(cel2.getId());
+                        listaNodos.get(i).setNodoHijoIzq(cel2.getId());
                         for (byte j = 0; j < listaNodos.size(); j++) {
                             if (listaNodos.get(j).getNodo().getId().equals(cel2.getId())) {
                                 listaNodos.get(j).setNodoPadre(cel1.getId());
@@ -44,7 +44,7 @@ public class ControlNodos {
                         }
                         break;
                     case "Der":
-                        listaNodos.get(i).setNodoHijoDerecho(cel2.getId());
+                        listaNodos.get(i).setNodoHijoDer(cel2.getId());
                         for (byte j = 0; j < listaNodos.size(); j++) {
                             if (listaNodos.get(j).getNodo().getId().equals(cel2.getId())) {
                                 listaNodos.get(j).setNodoPadre(cel1.getId());
@@ -60,8 +60,8 @@ public class ControlNodos {
         for (byte i = 0; i < listaNodos.size(); i++) {
             System.out.println(listaNodos.get(i).getNodo().getValue().toString()
                     + "ID: " + listaNodos.get(i).getNodo().getId() + " IDHijoIzquierdo: "
-                    + listaNodos.get(i).getNodoHijoIzquierdo() + " IDHijoDerecho: "
-                    + listaNodos.get(i).getNodoHijoDerecho() + " NodoPadre: "
+                    + listaNodos.get(i).getNodoHijoIzq() + " IDHijoDerecho: "
+                    + listaNodos.get(i).getNodoHijoDer() + " NodoPadre: "
                     + listaNodos.get(i).getNodoPadre() + " Estado: " + listaNodos.get(i).getEstado());
 
         }
@@ -79,8 +79,8 @@ public class ControlNodos {
         boolean completo = false;
         for (byte i = 0; i < listaNodos.size(); i++) {
             if (listaNodos.get(i).getNodo().getId().equals(nodo.getId())) {
-                if ((listaNodos.get(i).getNodoHijoDerecho() != null)
-                        && (listaNodos.get(i).getNodoHijoIzquierdo() != null)) {
+                if ((listaNodos.get(i).getNodoHijoDer() != null)
+                        && (listaNodos.get(i).getNodoHijoIzq() != null)) {
                     completo = true;
                 }
             }
@@ -91,10 +91,16 @@ public class ControlNodos {
     public void comienzaPreorden() {
         for (byte i = 0; i < listaNodos.size(); i++) {
             if ((listaNodos.get(i).getNodoPadre() == null)
-                    && ((listaNodos.get(i).getNodoHijoDerecho() != null)
-                    || listaNodos.get(i).getNodoHijoIzquierdo() != null)) {
+                    && ((listaNodos.get(i).getNodoHijoDer() != null)
+                    || listaNodos.get(i).getNodoHijoIzq() != null)) {
                 rn = new RecorreNodos();
                 rn.preorden(listaNodos, listaNodos.get(i));
+            }
+            else if (listaNodos.get(i).getNodoHijoDer() == null
+                    && listaNodos.get(i).getNodoHijoIzq() == null && listaNodos.size() == 1) {
+                rn = new RecorreNodos();
+                rn.preorden(listaNodos, listaNodos.get(i));
+                
             }
         }
     }
